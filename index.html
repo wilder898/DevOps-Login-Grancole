@@ -4,29 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./source/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
     <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
+            <div>
+
+            </div>
         </div>
         <div class="right-panel">
+            <div class="logo">
+                <img src="./img/logo.png" alt="Logo GranCole">
+            </div>
+            <h2>Bienvenido a GranCole</h2>
+            <p>Inicia sesión para continuar</p>
             <div class="login-box">
-                <div class="logo">
-                    <img src="./img/logo.png" alt="Logo GranCole">
-                </div>
-                <h2>Bienvenido a GranCole</h2>
-                <p>Inicia sesión para continuar</p>
                 <form>
                     <h3>Iniciar Sesión</h3>
                     <p>Ingresa tus credenciales para acceder al sistema</p>
                     <div class="input-group">
                         <label for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="0000000">
+                        <div class="input-wrapper">
+                            <i class="fa fa-user"></i>
+                            <input type="text" id="usuario" name="usuario" placeholder="0000000">
+                        </div>
                     </div>
                     <div class="input-group">
                         <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="********">
+                        <div class="input-wrapper">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" id="contrasena" name="contrasena" placeholder="********">
+                        </div>
                     </div>
                     <div class="forgot-password">
                         <a href="#">¿Olvidaste tu contraseña?</a>
@@ -35,12 +48,15 @@
                 </form>
                 <div class="no-account">
                     <p>¿No tienes una cuenta? <a href="#">Contacta al administrador</a></p>
+                    <div>
+                        <p>© 2025 GranCole Pro. Todos los derechos reservados.</p>
+                    </div>
                 </div>
-                <footer>
-                    <p>© 2025 GranCole Pro. Todos los derechos reservados.</p>
-                </footer>
             </div>
+        </div>
     </div>
-    </div>
+    <footer>
+        <p>© 2025 GranCole Pro. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

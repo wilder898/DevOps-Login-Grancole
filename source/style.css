@@ -7,6 +7,7 @@
 
 body{
     height: 100%;
+    margin: 0%;
 }
 
 .container {
@@ -16,7 +17,21 @@ body{
 
 .left-panel {
     width: 50%;
-    background-color: #ffffff;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.left-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(124 0 255 / 42%); /* Cambia opacidad si quieres más o menos difuso */
+    backdrop-filter: blur(3px); /* Difumina la imagen */
 }
 
 .right-panel {
@@ -25,6 +40,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .login-box {
@@ -35,6 +51,7 @@ body{
     max-width: 400px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 15px;
 }
 
 .logo img {
@@ -89,6 +106,31 @@ body{
     font-size: 1em;
 }
 
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #888888;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 42px; /* Altura uniforme */
+    padding: 0 12px 0 38px; /* Espacio a la izquierda para el ícono */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
 .forgot-password {
     text-align: right;
     margin-bottom: 20px;
@@ -135,7 +177,10 @@ button[type="submit"]:hover {
 }
 
 footer {
-    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
     font-size: 0.75em;
     color: #999999;
+    background-color: #ffffff;
 }
