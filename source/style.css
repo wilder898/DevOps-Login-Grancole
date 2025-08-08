@@ -16,22 +16,90 @@ body{
 }
 
 .left-panel {
-    width: 50%;
-    background-image: url(../img/fondo.jpg);
-    background-size: cover;
-    background-position: center;
     position: relative;
+    width: 50%;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
 .left-panel::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    background: linear-gradient(
+        rgb(124 0 255 / 42%), 
+        rgb(124 0 255 / 42%)), 
+        url(../img/fondo.jpg) no-repeat center center;
+    background-size: cover;
+    filter: blur(4px) brightness(0.6);
+    z-index: 1;
+}
+
+.left-panel .content {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.left-panel .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-panel .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.left-panel h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.left-panel p {
+    font-size: 1em;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.left-panel ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.left-panel ul li::before {
+    content: "✔";
+    position: absolute;
     left: 0;
-    background-color: rgb(124 0 255 / 42%); 
-    backdrop-filter: blur(3px);
+    color: #00ffcc;
+}
+
+.left-panel .stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.left-panel .stat {
+    text-align: center;
+}
+
+.left-panel .stat strong {
+    display: block;
+    font-size: 1.4em;
 }
 
 .right-panel {
@@ -187,12 +255,14 @@ footer {
 
 @media (max-width: 991px) {
     .container {
+        height: auto;
         flex-direction: column;
     }
 
     .left-panel {
         width: 100%;
-        height: 250px;
+        height: auto;
+        padding: 30px;
     }
 
     .right-panel {
@@ -202,6 +272,19 @@ footer {
 }
 
 @media (max-width: 575px) {
+
+    .left-panel {
+        padding: 20px;
+    }
+
+    .left-panel h1 {
+        font-size: 1.5em;
+    }
+
+    .left-panel .stat strong {
+    font-size: 1.2em;
+    }
+
     .right-panel {
         padding: 20px;
     }
